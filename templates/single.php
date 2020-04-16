@@ -25,5 +25,7 @@
         ?>
     </div>
 </div>
+<footer><p>voila la fin de la page</p></footer>
 </body>
 </html>
+
