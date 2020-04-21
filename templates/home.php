@@ -1,9 +1,7 @@
 <?php $this->title = "Accueil"; ?>
     <h1>Mon blog</h1>
 
-    <div>
-        <p>un paragraphe</p>
-    </div>
+    <a href="../public/index.php?route=addArticle">Nouveaux aricltes </a>
 
 
 

@@ -12,7 +12,9 @@
     <br>
     <a href="../public/index.php">Retour à l'accueil</a>
     <div id="comments" class="text-left" style="margin-left: 50px">
+
         <h3>Commentaires</h3>
+        <?php include('form_comments.php'); ?>
         <?php
         foreach ($comments as $comment )
         {
@@ -25,7 +27,7 @@
         ?>
     </div>
 </div>
-<footer><p>voila la fin de la page</p></footer>
+
 </body>
 </html>
 

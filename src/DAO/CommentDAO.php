@@ -28,4 +28,8 @@ class CommentDAO extends DAO
         $result->closeCursor();
         return $comments;
     }
+
+
+
+
 }

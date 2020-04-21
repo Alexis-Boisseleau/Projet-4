@@ -1,23 +1,11 @@
 <?php
 namespace App\src\controller;
 
-use App\src\DAO\ArticleDAO;
-use App\src\DAO\CommentDAO;
-use App\src\model\View;
 
-class FrontController
+
+class FrontController extends controller
 {
-    private $articleDAO;
-    private $commentDAO;
-    private $view;
 
-    public function __construct()
-    {
-        $this->articleDAO = new ArticleDAO();
-        $this->commentDAO = new CommentDAO();
-        $this->view = new View();
-
-    }
 
     public function home()
     {
@@ -34,4 +22,7 @@ class FrontController
             'comments' => $comments
         ]);
     }
+
+
+
 }
