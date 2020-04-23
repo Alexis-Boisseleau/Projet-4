@@ -6,6 +6,7 @@ use App\src\model\Comment;
 
 class CommentDAO extends DAO
 {
+
     private function buildObject($row)
     {
         $comment = new Comment();
@@ -27,9 +28,8 @@ class CommentDAO extends DAO
         }
         $result->closeCursor();
         return $comments;
+
     }
-
-
 
 
 }

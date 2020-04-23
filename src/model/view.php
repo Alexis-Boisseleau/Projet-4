@@ -2,26 +2,34 @@
 
 namespace App\src\model;
 
-use Exception;
+use App\config\Request;
 
 class View
 {
     private $file;
     private $title;
+    private $request;
+    private $session;
+
+    public function __construct()
+    {
+        $this->request = new Request();
+        $this->session = $this->request->getSession();
+    }
 
     public function render($template, $data = [])
     {
-        //on recupere le fichier + les datas qui corespondent (home et single )
         $this->file = '../templates/'.$template.'.php';
-        $content  = $this->generateFile($this->file, $data);
-        $view = $this->generateFile('../templates/base.php', [
+        $content  = $this->renderFile($this->file, $data);
+        $view = $this->renderFile('../templates/base.php', [
             'title' => $this->title,
-            'content' => $content
+            'content' => $content,
+            'session' => $this->session
         ]);
         echo $view;
     }
 
-    private function generateFile($file, $data)
+    private function renderFile($file, $data)
     {
         if(file_exists($file)){
             extract($data);
@@ -29,6 +37,6 @@ class View
             require $file;
             return ob_get_clean();
         }
-        throw new Exception('fichier '.$file.'introuvable');
+        header('Location: index.php?route=notFound');
     }
 }

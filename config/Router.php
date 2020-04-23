@@ -1,51 +1,53 @@
 <?php
+
 namespace App\config;
-
-use App\src\controller\FrontController;
-use App\src\controller\ErrorController;
 use App\src\controller\BackController;
+use App\src\controller\ErrorController;
+use App\src\controller\FrontController;
 use Exception;
-
 
 class Router
 {
-
     private $frontController;
+    private $errorController;
+    private $backController;
+    private $request;
 
-
-    public function __construct(){
+    public function __construct()
+    {
+        $this->request = new Request();
         $this->frontController = new FrontController();
+        $this->backController = new BackController();
         $this->errorController = new ErrorController();
-        $this->backController = new backController();
-
     }
-
 
     public function run()
     {
-        try{
-            if(isset($_GET['route'])) {
-                if($_GET['route'] === 'article') {
-
-                    $this->frontController->article($_GET['articleId']);
-
-                }else if($_GET['route'] === 'addArticle') {
-
-                    $this->backController->addArticle($_POST);
-
+        $route = $this->request->getGet()->get('route');
+        try {
+            if (isset($route))
+            {
+                if ($route === 'article'){
+                    $this->frontController->article($this->request->getGet()->get('articleId'));
+                }
+                else if ($route === 'addArticle') {
+                    $this->backController->addArticle($this->request->getPost());
+                } else if ($route === 'editArticle') {
+                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 } else {
                     $this->errorController->errorNotFound();
-
                 }
-            } else {
+            }
+
+            else {
                 $this->frontController->home();
 
             }
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->errorController->errorServer();
-
         }
+
     }
+
 
 }

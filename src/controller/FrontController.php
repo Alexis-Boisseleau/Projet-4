@@ -11,7 +11,9 @@ class FrontController extends controller
     {
         $articles = $this->articleDAO->getArticles();
         return $this->view->render('home',['articles'=>$articles]);
+
     }
+
 
     public function article($articleId)
     {
@@ -21,8 +23,8 @@ class FrontController extends controller
             'article' => $article,
             'comments' => $comments
         ]);
-    }
 
+    }
 
 
 }

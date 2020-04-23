@@ -1,7 +1,10 @@
 <?php $this->title = "Accueil"; ?>
-    <h1>Mon blog</h1>
 
-    <a href="../public/index.php?route=addArticle">Nouveaux aricltes </a>
+<?= $this->session->show('add_article'); ?>
+<?= $this->session->show('edit_article'); ?>
+<h1 style="text-align: center">Blog jean de la fontaine</h1>
+
+    <a href="../public/index.php?route=addArticle">Nouveaux articles </a>
 
 
 
