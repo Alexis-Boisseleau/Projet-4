@@ -1,7 +1,7 @@
 <?php
 namespace App\src\controller;
 
-
+use App\config\Parameter;
 
 class FrontController extends controller
 {
@@ -25,6 +25,27 @@ class FrontController extends controller
         ]);
 
     }
+
+
+    public function addComment(Parameter $post, $articleId)
+    {
+        $article = $this->articleDAO->getArticle($articleId);
+        $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+
+        if($post->get('submit')) {
+            $this->commentDAO->addComment($post, $articleId);
+
+          }
+
+          return $this->view->render('single', [
+              'article' => $article,
+              'comments' => $comments,
+              'post' => $post
+          ]);
+
+
+    }
+
 
 
 }

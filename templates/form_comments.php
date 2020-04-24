@@ -1,10 +1,10 @@
 <form method="post" action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()); ?>">
 
-    <label for="pseudo">Pseudo</label>
-    <input type="text" name="pseudo" id="pseudo"></br>
+    <label for="author">Pseudo</label>
+    <input type="text" name="author" id="author"></br>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message"></textarea></br>
+    <label for="content">Message</label>
+    <textarea id="content" name="content"></textarea></br>
 
     <input type="submit" value="Envoyer" id="submit" name="submit">
 
