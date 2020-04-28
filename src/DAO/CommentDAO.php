@@ -38,6 +38,7 @@ class CommentDAO extends DAO
         $sql = 'INSERT INTO comments (author, content, createdAt, articleid) VALUES (?, ?, NOW(), ?)';
         $this->createQuery($sql, [$post->get('author'), $post->get('content'), $articleId]);
     }
+    
 
 
 }

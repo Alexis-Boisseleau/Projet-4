@@ -36,6 +36,8 @@ class Router
                     $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 } else if ($route === 'addComment') {
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                } else if ($route === 'deleteArticle') {
+                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 } else {
                     $this->errorController->errorNotFound();
                 }
