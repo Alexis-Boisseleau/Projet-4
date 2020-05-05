@@ -7,6 +7,7 @@ class Comment
     private $author;
     private $content;
     private $createdAt;
+    private $flag;
 
     public function getId()
     {
@@ -35,6 +36,13 @@ class Comment
 
     }
 
+
+    public function isFlag()
+    {
+        return $this->flag;
+    }
+
+
     public function setId ($id)
     {
         $this->id = $id;
@@ -60,6 +68,12 @@ class Comment
     {
         $this->createdAt = $createdAt;
 
+    }
+
+
+    public function setFlag($flag)
+    {
+        $this->flag = $flag;
     }
 
 

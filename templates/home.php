@@ -3,6 +3,9 @@
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
+<?= $this->session->show('add_comment'); ?>
+<?= $this->session->show('flag_comment'); ?>
+
 <h1 style="text-align: center">Blog jean de la fontaine</h1>
 
     <a href="../public/index.php?route=addArticle">Nouveaux articles </a>

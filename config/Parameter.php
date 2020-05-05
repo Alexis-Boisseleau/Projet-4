@@ -15,7 +15,7 @@ class Parameter
 
     public function get($name)
     {
-        if(isset($this->parameter[$name]))
+        if (isset($this->parameter[$name]) )
         {
             return $this->parameter[$name];
 
@@ -28,6 +28,11 @@ class Parameter
     {
         $this->parameter[$name] = $value;
 
+    }
+
+    public function all()
+    {
+        return $this->parameter;
     }
 
 

@@ -38,6 +38,8 @@ class Router
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 } else if ($route === 'deleteArticle') {
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                } else if ($route === 'flagComment') {
+                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
                 } else {
                     $this->errorController->errorNotFound();
                 }
