@@ -72,5 +72,5 @@ class ArticleDAO extends DAO
     }
 
 
-    
+
 }
