@@ -1,4 +1,42 @@
-h1{
-    color: blue;
+/*font*/
+@font-face{
+    font-family: 'AlexBrush-Regular';
+    src: url(fonts/AlexBrush-Regular.ttf);
 }
 
+
+/* css page home */
+h1{
+    
+    font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
+}
+
+img{
+    height: 450px;
+}
+
+
+
+#article{
+
+
+    height: 450px;
+    margin: 30px;
+    text-align: center;
+
+
+}
+
+.title-article-home{
+    font-size: 30px;
+    font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
+}
+
+
+
+.contenu-home{
+    text-align: justify;
+    height: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

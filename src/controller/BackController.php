@@ -8,6 +8,7 @@ class BackController extends Controller
 {
     public function addArticle(Parameter $post)
     {
+
         if($post->get('submit')) {
             $errors = $this->validation->validate($post, 'Article');
             if(!$errors) {
