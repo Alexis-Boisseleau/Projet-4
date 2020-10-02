@@ -4,7 +4,7 @@
 
 
 
-<h1 style="text-align: center">Blog Jean Forteroche</h1>
+
 
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

@@ -5,14 +5,17 @@
 }
 /* css base */
 body{
-    background-color:  #A2B7CA !important;
+    background-color:  !important;
+}
+
+header{
+    font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color:#BDCDDB ;
+    border-bottom: 1px solid black;
 }
 
 /* css page home */
-h1{
-
-    font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
-}
 
 
 img{
@@ -36,6 +39,7 @@ img{
 .title-article-home{
     font-size: 30px;
     font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
+    height: 60px;
 }
 
 
@@ -47,9 +51,6 @@ img{
     overflow: hidden;
 }
 
-.author_home{
-
-}
 
 /* css page single */
 #comment{
@@ -62,6 +63,7 @@ img{
 footer{
     border-top: 1px solid black;
     text-align: center;
+    background-color: #BDCDDB;
 
 }
 

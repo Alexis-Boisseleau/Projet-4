@@ -20,11 +20,12 @@
     <script type="text/javascript" src="../public/js/tinymce/tinymce-init.js"></script>
 </head>
 <body>
+    <header ><h1>Blog Jean Forteroche</h1></header>
     <div id="content">
         <?= $content ?>
     </div>
 
-    <footer>
+    <footer >
         <p>Jean Forteroche site Web </br> Tous droits réservés</p>
         <div id="social">
             <i class="fab fa-twitter-square"></i>

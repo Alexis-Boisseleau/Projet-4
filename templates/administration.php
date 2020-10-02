@@ -9,67 +9,72 @@
 
 
 
-
-<h2>Articles</h2>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
-<table>
-    <tr>
-        <td>Id</td>
-        <td>Titre</td>
-        <td>Contenu</td>
-        <td>Auteur</td>
-        <td>Date</td>
-        <td>Actions</td>
-    </tr>
-    <?php
-    foreach ($articles as $article)
-    {
+<div class="container table-responsive">
+    <h2>Articles</h2>
+    <a href="../public/index.php?route=addArticle" class="btn btn-primary">Nouvel article</a>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <td>Id</td>
+                <td>Titre</td>
+                <td>Contenu</td>
+                <td>Auteur</td>
+                <td>Date</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <?php
+        foreach ($articles as $article)
+        {
+            ?>
+            <tr>
+                <td><?= htmlspecialchars($article->getId());?></td>
+                <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= $article->getTitle();?></a></td>
+                <td><?= substr($article->getContent(), 0, 150);?></td>
+                <td><?= $article->getAuthor();?></td>
+                <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+                <td>
+                    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>"  class="btn btn-primary" style="margin-bottom: 5px;">Modifier</a>
+                    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>"  class="btn btn-primary">Supprimer</a>
+                </td>
+            </tr>
+            <?php
+        }
         ?>
+    </table>
+</div>
+
+<div class="container table-responsive">
+    <h2>Commentaires signalés</h2>
+
+    <table class="table table-bordered">
         <tr>
-            <td><?= htmlspecialchars($article->getId());?></td>
-            <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-            <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
-            <td><?= htmlspecialchars($article->getAuthor());?></td>
-            <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
-            <td>
-                <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
-            </td>
+            <td>Id</td>
+            <td>Pseudo</td>
+            <td>Message</td>
+            <td>Date</td>
+            <td>Actions</td>
         </tr>
         <?php
-    }
-    ?>
-</table>
-
-<h2>Commentaires signalés</h2>
-
-<table>
-    <tr>
-        <td>Id</td>
-        <td>Pseudo</td>
-        <td>Message</td>
-        <td>Date</td>
-        <td>Actions</td>
-    </tr>
-    <?php
-    foreach ($comments as $comment)
-    {
+        foreach ($comments as $comment)
+        {
+            ?>
+            <tr>
+                <td><?= htmlspecialchars($comment->getId());?></td>
+                <td><?= htmlspecialchars($comment->getAuthor());?></td>
+                <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
+                <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
+                <td>
+                    <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-primary">Désignaler le commentaire</a>
+                    <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>" class="btn btn-primary">Supprimer le commentaire</a>
+                </td>
+            </tr>
+            <?php
+        }
         ?>
-        <tr>
-            <td><?= htmlspecialchars($comment->getId());?></td>
-            <td><?= htmlspecialchars($comment->getAuthor());?></td>
-            <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
-            <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
-            <td>
-                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
-            </td>
-        </tr>
-        <?php
-    }
-    ?>
-</table>
+    </table>
+</div>
 
-<h2>Utilisateurs</h2>
+
 
 <a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>

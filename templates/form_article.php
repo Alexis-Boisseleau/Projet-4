@@ -21,12 +21,12 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
             <input type="text" id="author" name="author" class="tinymce" value="<?= isset($post) ? htmlspecialchars($post->get('author')): ''; ?>"><br>
             <?= isset($errors['author']) ? $errors['author'] : ''; ?>
 
-            <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
+            <input class="btn btn-primary" type="submit" value="<?= $submit; ?>" id="submit" name="submit">
 
             </div>
 
     </form>
 
-    <a href="../public/index.php">Retour à l'accueil</a>
+    <a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>
 
 </div>
