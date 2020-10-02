@@ -1,28 +1,35 @@
 
 <?php $this->title = "Article"; ?>
 
+
 <?= $this->session->show('add_comment'); ?>
-<div class="container-fluid">
-    <div class="container">
+<?= $this->session->show('flag_comment'); ?>
+
+
+<div class="container">
+
         <div>
-            <h2><?= $article->getTitle();?></h2>
+            <h2 class="title-single"><?= $article->getTitle();?></h2>
             <p><?= $article->getContent();?></p>
             <p><?= $article->getAuthor();?></p>
             <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
         </div>
+
         <br>
-        <div id="comments" class="text-left" style="margin-left: 50px">
-        <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-        <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Suprrimer l'article</a>
+        <div id="comments" >
+
             <h3>Commentaires</h3>
             <?php include('form_comments.php'); ?>
             <?php
             foreach ($comments as $comment )
             {
                 ?>
-                <h4><?= htmlspecialchars($comment->getAuthor());?></h4>
-                <p><?= htmlspecialchars($comment->getContent());?></p>
-                <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
+                <div id="comment">
+                    <p class="h5"><?= htmlspecialchars($comment->getAuthor());?></p>
+                    <p id="comment_line"><?= htmlspecialchars($comment->getContent());?></p>
+                    <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
+                </div>
+
 
             <?php
             if($comment->isFlag()) {
@@ -31,18 +38,21 @@
                 <?php
             } else {
                 ?>
-                <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+                <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-primary">Signaler le commentaire</a></p>
+
                 <?php
             }
+
             ?>
+
             <br>
             <?php
         }
         ?>
         </div>
-    </div>
+
 </div>
-<a href="../public/index.php">Retour à l'accueil</a>
+<a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>
 
 </body>
 </html>

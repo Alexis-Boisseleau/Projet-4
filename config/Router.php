@@ -40,7 +40,14 @@ class Router
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 } else if ($route === 'flagComment') {
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
-                } else {
+                }  else if($route === 'unflagComment'){
+                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                } else if($route === 'deleteComment') {
+                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                }  else if($route === 'administration') {
+                    $this->backController->administration();
+                }
+                else {
                     $this->errorController->errorNotFound();
                 }
             }

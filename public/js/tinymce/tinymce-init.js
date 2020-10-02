@@ -1,6 +1,7 @@
 tinymce.init({
 	/* replace textarea having class .tinymce with tinymce editor */
     selector: "textarea.tinymce",
+    language : "fr_FR",
 
 
 
@@ -59,6 +60,7 @@ style_formats: [
 tinymce.init({
 	/* replace textarea having class .tinymce with tinymce editor */
     selector: "input.tinymce",
+    language : "fr_FR",
 
 /* display statusbar */
 statubar: true,

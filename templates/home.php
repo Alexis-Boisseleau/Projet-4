@@ -1,12 +1,10 @@
 <?php $this->title = "Accueil"; ?>
 
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
-<?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('add_comment'); ?>
-<?= $this->session->show('flag_comment'); ?>
 
-<h1 style="text-align: center">Blog jean de la fontaine</h1>
+
+
+
+<h1 style="text-align: center">Blog Jean Forteroche</h1>
 
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -32,17 +30,18 @@
 
 </div>
 
-<a href="../public/index.php?route=addArticle">Nouveaux articles </a>
+<a href="../public/index.php?route=administration">Administration</a>
+
 
 
 <div class='container-fluid'>
     <div class='container'>
         <div class='row' >
 <?php
-foreach ($articles as $article){
+foreach ($articles as $article) {
     ?>
 
-            <div id="article" class='col-md-3 col-xs-12 col-sm-12' >
+            <div id="article" class='col-md-3 col-xs-12 col-sm-4' >
                 <h2 class="title-article-home"><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= $article->getTitle();?></a></h2>
                 <i class="fas fa-signature" data-placement="center" ></i>
                 <div class="contenu-home">

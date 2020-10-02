@@ -2,5 +2,7 @@
 
 <div>
     <?php include('form_article.php');?>
+   
+    </form>
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>

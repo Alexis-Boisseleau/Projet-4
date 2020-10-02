@@ -25,9 +25,13 @@
     </div>
 
     <footer>
-        <p>test</p>
-        
-       
+        <p>Jean Forteroche site Web </br> Tous droits réservés</p>
+        <div id="social">
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram-square"></i>
+        </div>
+
     </footer>
 </body>
 </html>
