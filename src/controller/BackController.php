@@ -88,7 +88,7 @@ class BackController extends Controller
         if($post->get('submit')){
             $result = $this->adminDAO->admin($post);
             if($result && $result['MdpValide']){
-                return $this->view->render('administration');
+                return $this->view->render('home');
             }else{
                 $this->session->set('error_admin', 'Le pseudo ou le mot de passe sont incorrects');
                 return $this->view->render('connexionAdmin');
