@@ -66,7 +66,7 @@
                 <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
                 <td>
                     <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-primary">Désignaler le commentaire</a>
-                    <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>" class="btn btn-primary">Supprimer le commentaire</a>
+                    <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>" class="btn btn-danger">Supprimer le commentaire</a>
                 </td>
             </tr>
             <?php

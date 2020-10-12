@@ -3,6 +3,7 @@ namespace App\src\DAO;
 
 use App\config\Parameter;
 
+
 class adminDAO extends DAO{
 
     public function admin(Parameter $post)
