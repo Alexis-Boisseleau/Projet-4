@@ -46,8 +46,9 @@ class Router
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 }  else if($route === 'administration') {
                     $this->backController->administration();
-                }
-                else {
+                } else if($route === 'connexionAdmin'){
+                    $this->backController->connexionAdmin($this->request->getPost());
+                } else {
                     $this->errorController->errorNotFound();
                 }
             }

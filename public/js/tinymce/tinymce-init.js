@@ -1,6 +1,7 @@
 tinymce.init({
 	/* replace textarea having class .tinymce with tinymce editor */
     selector: "textarea.tinymce",
+    images_upload_url : "youruploadscript.php",
     language : "fr_FR",
 
 
@@ -50,6 +51,7 @@ style_formats: [
         {title: "Justify", icon: "alignjustify", format: "alignjustify"}
     ]}
 ],
+
 
 
 

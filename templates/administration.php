@@ -35,7 +35,7 @@
                 <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
                 <td>
                     <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>"  class="btn btn-primary" style="margin-bottom: 5px;">Modifier</a>
-                    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>"  class="btn btn-primary">Supprimer</a>
+                    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>"  class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
             <?php

@@ -6,6 +6,7 @@ use App\config\Request;
 use App\src\constraint\Validation;
 use App\src\DAO\ArticleDAO;
 use App\src\DAO\CommentDAO;
+use App\src\DAO\AdminDAO;
 use App\src\model\View;
 
 abstract class Controller
@@ -14,6 +15,8 @@ abstract class Controller
     protected $articleDAO;
 
     protected $commentDAO;
+
+    protected $adminDAO;
 
     protected $view;
 
@@ -31,6 +34,7 @@ abstract class Controller
     {
         $this->articleDAO = new ArticleDAO();
         $this->commentDAO = new CommentDAO();
+        $this->adminDAO = new adminDAO();
         $this->view = new View();
         $this->validation = new Validation();
         $this->request = new Request();

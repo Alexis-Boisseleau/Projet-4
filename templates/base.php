@@ -18,6 +18,7 @@
 
     <script type="text/javascript" src="../public/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="../public/js/tinymce/tinymce-init.js"></script>
+    <script type="text/javascript" src="../public/js/mdp.js"></script>
 </head>
 <body>
     <header ><h1>Blog Jean Forteroche</h1></header>
@@ -25,8 +26,10 @@
         <?= $content ?>
     </div>
 
-    <footer >
+    <footer>
         <p>Jean Forteroche site Web </br> Tous droits réservés</p>
+
+            <a href="../public/index.php?route=connexionAdmin" class="btn btn-link" >Administration</a>
         <div id="social">
             <i class="fab fa-twitter-square"></i>
             <i class="fab fa-facebook-square"></i>
@@ -34,5 +37,7 @@
         </div>
 
     </footer>
+
 </body>
+
 </html>

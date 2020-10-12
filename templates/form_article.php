@@ -27,6 +27,6 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 
     </form>
 
-    <a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>
+    
 
 </div>

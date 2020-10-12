@@ -83,4 +83,23 @@ class BackController extends Controller
         header('Location: ../public/index.php?route=administration');
     }
 
+    public function connexionAdmin(Parameter $post){
+
+        if($post->get('submit')){
+            $result = $this->adminDAO->admin($post);
+            if($result && $result['MdpValide']){
+                return $this->view->render('administration');
+            }else{
+                $this->session->set('error_admin', 'Le pseudo ou le mot de passe sont incorrects');
+                return $this->view->render('connexionAdmin');
+            }
+        }
+
+        return $this->view->render('connexionAdmin');
+
+    }
+
+
+
+
 }

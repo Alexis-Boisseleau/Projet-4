@@ -38,7 +38,7 @@
                 <?php
             } else {
                 ?>
-                <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-primary">Signaler le commentaire</a></p>
+                <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-danger">Signaler le commentaire</a></p>
 
                 <?php
             }
