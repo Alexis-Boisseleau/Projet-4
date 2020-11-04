@@ -53,6 +53,11 @@ header{
     background-color:  #BDCDDB;
 }
 
+#titreSingle{
+    text-align: center;
+}
+
+
 
 
 /*  css footer */
@@ -65,4 +70,17 @@ footer{
 
 #social i{
     font-size: 30px;
+}
+
+/* css tinymce*/
+.tinymce{
+    height: 500px;
+}
+
+
+/* css formulaire */
+
+
+#title{
+    width: 300px;
 }

@@ -38,8 +38,7 @@ foreach ($articles as $article) {
                 <i class="fas fa-signature" data-placement="center" ></i>
                 <div class="contenu-home">
                   <p><?= $article->getContent();?></p>
-                </div>
-                <p class="author-home"><?= $article->getAuthor();?></p>
+                </div></br>
                 <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
             </div>
 

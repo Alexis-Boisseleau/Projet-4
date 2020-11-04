@@ -8,7 +8,6 @@ class Article
     private $id;
     private $title;
     private $content;
-    private $author;
     private $createdAt;
 
     // les getters
@@ -33,12 +32,7 @@ class Article
 
     }
 
-    public function getAuthor()
-    {
-        return $this->author;
-
-    }
-
+   
 
     public function getCreatedAt()
     {
@@ -76,11 +70,6 @@ class Article
 
     }
 
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-
-    }
 
 
     public function setCreatedAt($createdAt)

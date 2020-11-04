@@ -18,7 +18,6 @@
                 <td>Id</td>
                 <td>Titre</td>
                 <td>Contenu</td>
-                <td>Auteur</td>
                 <td>Date</td>
                 <td>Actions</td>
             </tr>
@@ -31,7 +30,6 @@
                 <td><?= htmlspecialchars($article->getId());?></td>
                 <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= $article->getTitle();?></a></td>
                 <td><?= substr($article->getContent(), 0, 150);?></td>
-                <td><?= $article->getAuthor();?></td>
                 <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
                 <td>
                     <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>"  class="btn btn-primary" style="margin-bottom: 5px;">Modifier</a>
