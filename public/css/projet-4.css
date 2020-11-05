@@ -4,9 +4,7 @@
     src: url(fonts/AlexBrush-Regular.ttf);
 }
 /* css base */
-body{
-    background-color:  !important;
-}
+
 
 header{
     font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
@@ -21,7 +19,6 @@ header{
 
 
 #article{
-
     height: 470px;
     margin: 30px;
     text-align: center;

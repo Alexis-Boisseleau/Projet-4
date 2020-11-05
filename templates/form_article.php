@@ -5,7 +5,7 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 <div class="container-fluid">
 
-    <form method="post" action="../public/index.php?route=<?= $route; ?>" >
+    <form method="post" action="../public/index.php?route=<?= $route; ?>" enctype="multipart/form-data" >
 
         <div class="form-group">
 
@@ -17,7 +17,9 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
             <textarea id="content" name="content" class="tinymce" ><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
             <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
+
             <input class="btn btn-primary" type="submit" value="<?= $submit; ?>" id="submit" name="submit">
+
 
             </div>
 

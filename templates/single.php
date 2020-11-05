@@ -9,8 +9,8 @@
 <div class="container">
 
         <div>
-            <h2 id="titreSingle"><?= $article->getTitle();?></h2>
-            <p><?= $article->getContent();?></p>
+            <h2 id="titreSingle"><?= htmlspecialchars($article->getTitle()) ;?></h2>
+            <p><?=  $article->getContent();?></p>
             <p>Jean Forteroche</p>
             <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
         </div>
