@@ -52,7 +52,9 @@ class Comment
 
     public function setAuthor ($author)
     {
+        if(is_string($author)){
         $this->author = $author;
+        }
 
     }
 

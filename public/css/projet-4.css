@@ -18,7 +18,7 @@ header{
 
 
 
-#article{
+.article{
     height: 470px;
     margin: 30px;
     text-align: center;
@@ -37,16 +37,25 @@ header{
 
 
 
+
 .contenu-home{
-    text-align: justify;
+
     height: 300px;
-    text-overflow: ellipsis;
+    text-overflow: clip ellipsis;
     overflow: hidden;
+
+}
+.contenu-home p{
+
 }
 
+.datehome{
+
+    margin-top: 20px;
+}
 
 /* css page single */
-#comment{
+.comment{
     background-color:  #BDCDDB;
 }
 
@@ -54,6 +63,12 @@ header{
     text-align: center;
 }
 
+/* formulaire */ 
+
+
+#submit{
+    margin-top: 15px;
+}
 
 
 

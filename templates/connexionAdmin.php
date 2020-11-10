@@ -7,10 +7,10 @@
 <form method="post" action="../public/index.php?route=connexionAdmin">
     <div class="form-group">
         <label for="pseudo">Pseudo</label>
-        <input type="text" name="pseudo" id="pseudo" class="form-control"></br>
+        <input type="text" name="pseudo" id="pseudo" class="form-control">
 
         <label for="password">Mot de passe</label>
-        <input  type="password" id="password" name="password" class="form-control"></br>
+        <input  type="password" id="password" name="password" class="form-control">
 
         <input type="submit" value="Connexion" id="submit" name="submit" class="btn btn-primary">
     </div>

@@ -55,7 +55,7 @@ class BackController extends Controller
         $post->set('id', $article->getId());
         $post->set('title', $article->getTitle());
         $post->set('content', $article->getContent());
-    
+
 
         return $this->view->render('edit_article', [
             'post' => $post

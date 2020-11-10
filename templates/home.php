@@ -1,6 +1,7 @@
 <?php $this->title = "Accueil"; ?>
 
 
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -33,13 +34,17 @@
 foreach ($articles as $article) {
     ?>
 
-            <div id="article" class='col-md-3 col-xs-12 col-sm-4' >
-                <h2 class="title-article-home"><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= $article->getTitle();?></a></h2>
-                <i class="fas fa-signature" data-placement="center" ></i>
+            <div class='col-12  col-md-4 col-lg-3 article' >
+                <h2 class="title-article-home"> <a href="../public/index.php?route=article&articleId=<?= $article->getId();?>"><?= htmlspecialchars($article->getTitle()) ;?> </a></h2>
+                <div>
+                  <i class="fas fa-signature" data-placement="center" ></i>
+                </div>
                 <div class="contenu-home">
-                  <p><?= $article->getContent();?></p>
-                </div></br>
-                <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+                <?= $article->getContent() ;?>
+                </div>
+                <div class="datehome">
+                  <p >Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+                </div>
             </div>
 
 <?php
@@ -52,8 +57,3 @@ foreach ($articles as $article) {
 
 
 
-
-
-</body>
-
-</html>

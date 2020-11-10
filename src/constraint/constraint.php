@@ -14,14 +14,14 @@ public function notBlank($name, $value)
 
 public function minLength($name, $value, $minSize)
 {
-    if(strlen($value)<$minSize) {
+    if(strlen($value)<$minSize)  {
         return '<p>Le champs '.$name.' doit au moins contenir au moins'.$minSize.' caractères</p>';
     }
 }
 
 public function maxLength($name, $value, $maxSize)
 {
-    if(strlen($value)>$maxSize) {
+    if(strlen($value)>$maxSize)  {
         return '<p>le champs '.$name.' doit contenir moins de '.$maxSize.' caractères</p>';
     }
 }

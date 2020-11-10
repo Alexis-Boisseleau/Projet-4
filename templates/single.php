@@ -24,15 +24,16 @@
             foreach ($comments as $comment )
             {
                 ?>
-                <div id="comment">
+                <div class="comment">
                     <p class="h5"><?= htmlspecialchars($comment->getAuthor());?></p>
-                    <p id="comment_line"><?= htmlspecialchars($comment->getContent());?></p>
+                    <p><?= htmlspecialchars($comment->getContent());?></p>
                     <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
                 </div>
 
 
             <?php
             if($comment->isFlag()) {
+                
                 ?>
                 <p>Ce commentaire a déjà été signalé</p>
                 <?php
@@ -54,6 +55,5 @@
 </div>
 <a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>
 
-</body>
-</html>
+
 

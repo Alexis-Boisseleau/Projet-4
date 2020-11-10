@@ -11,7 +11,7 @@ class ArticleDAO extends DAO
     {
         $article = new Article();
         $article->setId($row['id']);
-        $article->setTitle($row['title']);
+        $article->setTitle(htmlspecialchars( $row['title']));
         $article->setContent($row['content']);
         $article->setCreatedAt($row['createdAt']);
         return $article;
@@ -46,7 +46,6 @@ class ArticleDAO extends DAO
     {
         $sql = 'INSERT INTO article (title, content, createdAt) VALUES (?, ?, NOW())';
         $this->createQuery($sql, [$post->get('title'), $post->get('content')]);
-        
 
 
     }

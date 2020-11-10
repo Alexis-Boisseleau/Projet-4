@@ -12,8 +12,8 @@ class CommentDAO extends DAO
     {
         $comment = new Comment();
         $comment->setId($row['id']);
-        $comment->setAuthor($row['author']);
-        $comment->setContent($row['content']);
+        $comment->setAuthor(htmlspecialchars($row['author']));
+        $comment->setContent(htmlspecialchars($row['content']));
         $comment->setCreatedAt($row['createdAt']);
         $comment->setFlag($row['flag']);
         return $comment;

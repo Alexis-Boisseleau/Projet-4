@@ -9,19 +9,19 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 
         <div class="form-group">
 
-            <label for="title">Titre</label><br>
-            <input type="text" id="title" name="title"   value="<?= isset($post) ? htmlspecialchars($post->get('title')): ''; ?>"><br>
+            <label for="title">Titre</label>
+            <p><input type="text" id="title" name="title"   value="<?= isset($post) ? htmlspecialchars($post->get('title')): ''; ?>"></p>
             <?= isset($errors['title']) ? $errors['title'] : ''; ?>
 
-            <label for="content">Contenu</label><br>
-            <textarea id="content" name="content" class="tinymce" ><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
+            <label for="content">Contenu</label>
+            <p><textarea id="content" name="content" class="tinymce" ><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea></p>
             <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
 
-            <input class="btn btn-primary" type="submit" value="<?= $submit; ?>" id="submit" name="submit">
+           <p><input class="btn btn-primary" type="submit" value="<?= $submit; ?>" id="submit" name="submit"></p> 
 
 
-            </div>
+        </div>
 
     </form>
 
