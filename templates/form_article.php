@@ -18,13 +18,12 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
             <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
 
-           <p><input class="btn btn-primary" type="submit" value="<?= $submit; ?>" id="submit" name="submit"></p> 
+           <p><input class="btn btn-primary" type="submit" value="<?= $submit; ?>" id="submit" name="submit"></p>
 
 
         </div>
 
     </form>
 
-    
 
 </div>

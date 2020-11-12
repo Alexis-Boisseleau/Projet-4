@@ -39,7 +39,7 @@ class Router
                 } else if ($route === 'deleteArticle') {
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 } else if ($route === 'flagComment') {
-                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
+                    $this->frontController->flagComment($this->request->getGet()->get('commentId'),$this->request->getGet()->get('articleId'));
                 }  else if($route === 'unflagComment'){
                     $this->backController->unflagComment($this->request->getGet()->get('commentId'));
                 } else if($route === 'deleteComment') {

@@ -1,5 +1,7 @@
 <?php $this->title = "Accueil"; ?>
 
+<?php $this->session->show('not_admin'); ?>
+
 
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -26,7 +28,6 @@
 </div>
 
 
-
 <div class='container-fluid'>
     <div class='container'>
         <div class='row' >
@@ -34,10 +35,11 @@
 foreach ($articles as $article) {
     ?>
 
+
             <div class='col-12  col-md-4 col-lg-3 article' >
                 <h2 class="title-article-home"> <a href="../public/index.php?route=article&articleId=<?= $article->getId();?>"><?= htmlspecialchars($article->getTitle()) ;?> </a></h2>
                 <div>
-                  <i class="fas fa-signature" data-placement="center" ></i>
+                 <p><i class="fas fa-signature" data-placement="center" ></i></p> 
                 </div>
                 <div class="contenu-home">
                 <?= $article->getContent() ;?>
@@ -53,6 +55,11 @@ foreach ($articles as $article) {
         </div>
     </div>
 </div>
+
+
+
+
+
 
 
 

@@ -15,7 +15,9 @@ header{
 
 /* css page home */
 
-
+a:link{
+    text-decoration: none;
+}
 
 
 .article{
@@ -29,20 +31,23 @@ header{
     background-color: #BDCDDB;
 }
 
+
+
 .title-article-home{
     font-size: 30px;
     font-family: 'AlexBrush-Regular', Arial, Helvetica, sans-serif;
     height: 60px;
+    padding-top: 10px;
 }
-
 
 
 
 .contenu-home{
 
     height: 300px;
-    text-overflow: clip ellipsis;
+    text-overflow: ellipsis;
     overflow: hidden;
+
 
 }
 .contenu-home p{

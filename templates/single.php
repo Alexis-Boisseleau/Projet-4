@@ -25,7 +25,7 @@
             {
                 ?>
                 <div class="comment">
-                    <p class="h5"><?= htmlspecialchars($comment->getAuthor());?></p>
+                    <h5><?= htmlspecialchars($comment->getAuthor());?></h5>
                     <p><?= htmlspecialchars($comment->getContent());?></p>
                     <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
                 </div>
@@ -33,20 +33,24 @@
 
             <?php
             if($comment->isFlag()) {
-                
+
+
                 ?>
-                <p>Ce commentaire a déjà été signalé</p>
+
+
+
+                <p >Ce commentaire a déjà été signalé</p>
                 <?php
             } else {
                 ?>
-                <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-danger">Signaler le commentaire</a></p>
+                <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>" class="btn btn-danger" id="signalement">Signaler le commentaire</a></p>
 
                 <?php
             }
 
             ?>
 
-            <br>
+
             <?php
         }
         ?>
@@ -54,6 +58,15 @@
 
 </div>
 <a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>
+
+
+
+
+
+
+
+
+
 
 
 
