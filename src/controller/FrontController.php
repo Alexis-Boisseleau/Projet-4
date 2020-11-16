@@ -9,6 +9,7 @@ class FrontController extends controller
 
     public function home()
     {
+        session_destroy();
         $articles = $this->articleDAO->getArticles();
         return $this->view->render('home', ['articles' => $articles]);
 
@@ -29,21 +30,28 @@ class FrontController extends controller
 
     public function addComment(Parameter $post, $articleId)
     {
-        if($post->get('submit')) {
+
+        $article = $this->articleDAO->getArticle($articleId);
+        if($post->get('submit') ) {
             $errors = $this->validation->validate($post, 'Comment');
             if(!$errors) {
-                $this->commentDAO->addComment($post, $articleId);
-                $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
-                header('Location: ../public/index.php?route=article&articleId='.$articleId);
+                if(!empty($article)){
+                    $this->commentDAO->addComment($post, $articleId);
+                    $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+                    header('Location: ../public/index.php?route=article&articleId='.$articleId);
+                }else{
+                    echo" pas possible d'ajouter commentaire sur un article inexistant ;)";
+                }
             }
-            $article = $this->articleDAO->getArticle($articleId);
-            $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-            return $this->view->render('single', [
-                'article' => $article,
-                'comments' => $comments,
-                'post' => $post,
-                'errors' => $errors
-            ]);
+                $article = $this->articleDAO->getArticle($articleId);
+                $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+                return $this->view->render('single', [
+                    'article' => $article,
+                    'comments' => $comments,
+                    'post' => $post,
+                    'errors' => $errors
+                ]);
+
         }
 
     }

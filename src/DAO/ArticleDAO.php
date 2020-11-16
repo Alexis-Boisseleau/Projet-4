@@ -36,8 +36,13 @@ class ArticleDAO extends DAO
         $sql = 'SELECT id, title, content,createdAt FROM article WHERE id = ?';
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
-        $result->closeCursor();
-        return $this->buildObject($article);
+        if(!empty($article)){
+            $result->closeCursor();
+            return $this->buildObject($article);
+        }else{
+            echo "erreur article inéxistant";
+        }
+
 
     }
 

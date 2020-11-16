@@ -9,8 +9,6 @@
 
 
 
-
-
 <div class="container table-responsive">
     <h2>Articles</h2>
     <a href="../public/index.php?route=addArticle" class="btn btn-primary">Nouvel article</a>
