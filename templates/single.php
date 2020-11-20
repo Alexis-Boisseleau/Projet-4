@@ -10,13 +10,13 @@
 
         <div>
             <h2 id="titreSingle"><?= htmlspecialchars($article->getTitle()) ;?></h2>
-            <p><?=  $article->getContent();?></p>
+            <?=  $article->getContent();?>
             <p>Jean Forteroche</p>
             <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
         </div>
 
         <br>
-        <div id="comments" >
+        <div class="comments" >
 
             <h3>Commentaires</h3>
             <?php include('form_comments.php'); ?>
@@ -26,7 +26,7 @@
                 ?>
                 <div class="comment">
                     <h5><?= htmlspecialchars($comment->getAuthor());?></h5>
-                    <p><?= htmlspecialchars($comment->getContent());?></p>
+                    <?= htmlspecialchars($comment->getContent());?>
                     <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
                 </div>
 
@@ -58,6 +58,7 @@
 
 </div>
 <a href="../public/index.php" class="btn btn-primary">Retour à l'accueil</a>
+
 
 
 

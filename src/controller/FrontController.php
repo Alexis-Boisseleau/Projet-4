@@ -20,10 +20,12 @@ class FrontController extends controller
     {
         $article = $this->articleDAO->getArticle($articleId);
         $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-        return $this->view->render('single', [
+        if(!empty($article)){
+            return $this->view->render('single', [
             'article' => $article,
             'comments' => $comments
-        ]);
+             ]);
+        }
 
     }
 
@@ -34,23 +36,23 @@ class FrontController extends controller
         $article = $this->articleDAO->getArticle($articleId);
         if($post->get('submit') ) {
             $errors = $this->validation->validate($post, 'Comment');
-            if(!$errors) {
-                if(!empty($article)){
-                    $this->commentDAO->addComment($post, $articleId);
-                    $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
-                    header('Location: ../public/index.php?route=article&articleId='.$articleId);
-                }else{
-                    echo" pas possible d'ajouter commentaire sur un article inexistant ;)";
+            if(!empty($article)){
+                if(!$errors) {
+                        $this->commentDAO->addComment($post, $articleId);
+                        $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+                        header('Location: ../public/index.php?route=article&articleId='.$articleId);
                 }
+                    $article = $this->articleDAO->getArticle($articleId);
+                    $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+                    return $this->view->render('single', [
+                        'article' => $article,
+                        'comments' => $comments,
+                        'post' => $post,
+                        'errors' => $errors
+                    ]);
+            }else{
+                echo" <p> Pas possible d'ajouter commentaire sur un article inexistant ;)</p>";
             }
-                $article = $this->articleDAO->getArticle($articleId);
-                $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-                return $this->view->render('single', [
-                    'article' => $article,
-                    'comments' => $comments,
-                    'post' => $post,
-                    'errors' => $errors
-                ]);
 
         }
 
@@ -64,8 +66,6 @@ class FrontController extends controller
         header('Location: ../public/index.php');
 
     }
-
-
 
 
 }

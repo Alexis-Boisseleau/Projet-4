@@ -32,19 +32,19 @@
 
 <div class='container-fluid'>
     <div class='container'>
-        <div class='row' >
+        <div class='row no-container' >
 <?php
 foreach ($articles as $article) {
     ?>
 
 
-            <div class='col-12  col-md-4 col-lg-3 article' >
+            <div class='col-12  col-md-12 col-lg-3 article' >
                 <h2 class="title-article-home"> <a href="../public/index.php?route=article&articleId=<?= $article->getId();?>"><?= htmlspecialchars($article->getTitle()) ;?> </a></h2>
                 <div>
                  <p><i class="fas fa-signature" data-placement="center" ></i></p> 
                 </div>
                 <div class="contenu-home">
-                <?= $article->getContent() ;?>
+                  <?= $article->getContent() ;?>
                 </div>
                 <div class="datehome">
                   <p >Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>

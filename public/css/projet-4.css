@@ -13,6 +13,10 @@ header{
     border-bottom: 1px solid black;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* css page home */
 
 a:link{
@@ -24,13 +28,17 @@ a:link{
     height: 470px;
     margin: 30px;
     text-align: center;
-
+   
 }
 
 .row :hover{
     background-color: #BDCDDB;
 }
 
+.no-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important; 
+}
 
 
 .title-article-home{
@@ -43,30 +51,25 @@ a:link{
 
 
 .contenu-home{
-
-    height: 300px;
-    text-overflow: ellipsis;
+    height: 310px;
     overflow: hidden;
-
-
-}
-.contenu-home p{
-
+    word-break: break-word;
 }
 
 .datehome{
-
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 /* css page single */
-.comment{
-    background-color:  #BDCDDB;
-}
 
 #titreSingle{
     text-align: center;
 }
+
+.comment{
+    background-color:  #BDCDDB;
+}
+
 
 /* formulaire */ 
 
@@ -100,4 +103,8 @@ footer{
 
 #title{
     width: 300px;
+}
+
+.flaged{
+    display: none;
 }

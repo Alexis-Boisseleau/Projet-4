@@ -40,7 +40,7 @@ class ArticleDAO extends DAO
             $result->closeCursor();
             return $this->buildObject($article);
         }else{
-            echo "erreur article inéxistant";
+            echo " <p>Erreur article inéxistant</p>";
         }
 
 
